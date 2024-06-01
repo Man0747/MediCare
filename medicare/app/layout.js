@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <link rel="icon" href="/MediCareLogoRound.png" />
+      <head>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         </div>
       </div>
       </body>
+      </head>
     </html>
   );
 }
