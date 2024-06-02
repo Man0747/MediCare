@@ -23,8 +23,8 @@ const VerticalCalendar = ({ onDateSelect }) => {
 
   return (
     <div className="text-center">
-      <h1 className="text-white text-2xl">Upcoming Appointments</h1>
-      <div className="text-gray-400 mb-4">{currentWeek.format('MMMM YYYY')}</div>
+      <h1 className="text-black text-2xl mt-2 font-medium">Upcoming Appointments</h1>
+      <div className="text-gray-400 text-lg mb-4 mt-2 font-semibold">{currentWeek.format('MMMM YYYY')}</div>
       <div className="flex justify-around items-center p-5 bg-gray-800 rounded-lg max-w-lg mx-auto">
         <button onClick={handlePreviousWeek} className="text-white text-2xl cursor-pointer hover:scale-125 transition-all ease-in-out">
           <FaChevronLeft />
@@ -34,7 +34,7 @@ const VerticalCalendar = ({ onDateSelect }) => {
             <span className="block text-white">{day}</span>
             <button
               onClick={() => handleDateClick(dates[index])}
-              className={`block mt-2 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 ${dates[index].isSame(moment(), 'day') ? 'bg-green-500' : 'bg-gray-600'}`}
+              className={` mt-2 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 ${dates[index].isSame(moment(), 'day') ? 'bg-green-500' : 'bg-gray-600'}`}
             >
               {dates[index].date()}
             </button>
