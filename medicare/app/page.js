@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SignupPage from "./(route)/Login/_components/LoginForm";
 import Dashboard from "./(route)/Dashboard/page";
+import WorkingHoursForm from "./_components/WorkingHoursForm";
 
 export default function Home() {
   const [doctors, setDoctors] = useState([]);
@@ -26,13 +27,13 @@ export default function Home() {
 
   return (
    <div >
-        <Dashboard></Dashboard>
+        {/* <Dashboard></Dashboard> */}
         {/* <Hero></Hero> */}
         {/* <CategorySearch></CategorySearch> */}
         {/* <DoctorList doctors={doctors} />  */}
         {/* <SignupPage></SignupPage> */}
-        {/* <DoctorDataForm></DoctorDataForm>*/}
-
+        <DoctorDataForm></DoctorDataForm>
+        {/* <WorkingHoursForm></WorkingHoursForm> */}
    </div>
   );
 }

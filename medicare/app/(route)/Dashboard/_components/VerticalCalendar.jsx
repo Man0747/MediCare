@@ -1,4 +1,3 @@
-// src/components/VerticalCalendar.js
 import React, { useState } from 'react';
 import moment from 'moment';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
