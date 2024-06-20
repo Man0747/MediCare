@@ -1,13 +1,14 @@
 "use client";
-import CategorySearch from "./_components/CategorySearch";
-import DoctorDataForm from "./_components/DoctorDataForm";
-import DoctorList from "./_components/DoctorList";
-import Hero from "./_components/Hero";
+// import CategorySearch from "./_components/CategorySearch";
+// import DoctorList from "./_components/DoctorList";
+// import Hero from "./_components/Hero";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SignupPage from "./(route)/Login/_components/LoginForm";
-import Dashboard from "./(route)/Dashboard/page";
-import WorkingHoursForm from "./_components/WorkingHoursForm";
+// import SignupPage from "./(route)/Login/_components/LoginForm";
+// import Dashboard from "./(route)/Dashboard/page";
+// import DoctorDataForm from "./(route)/DoctorForm/_components/DoctorDataForm";
+// import PatientDataForm from "./(route)/PatientForm/_components/PatientDataForm";
+import Appointment from "./(route)/Appointment/page";
 
 export default function Home() {
   const [doctors, setDoctors] = useState([]);
@@ -32,7 +33,9 @@ export default function Home() {
         {/* <CategorySearch></CategorySearch> */}
         {/* <DoctorList doctors={doctors} />  */}
         {/* <SignupPage></SignupPage> */}
-        <DoctorDataForm></DoctorDataForm>
+        {/* <DoctorDataForm></DoctorDataForm> */}
+        {/* <PatientDataForm></PatientDataForm> */}
+        {/* <Appointment></Appointment> */}
         {/* <WorkingHoursForm></WorkingHoursForm> */}
    </div>
   );

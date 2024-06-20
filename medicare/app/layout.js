@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
       <body className="font-manrope" >
-      <div className="flex">
+      <div className="flex ">
         <div>
           <SideBar></SideBar>
           </div>

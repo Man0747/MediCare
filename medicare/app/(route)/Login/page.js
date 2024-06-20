@@ -1,5 +1,6 @@
+"use client"
 import React from 'react'
-import LoginForm from './_components/LoginForm'
+import LoginForm from './_components/LoginForm' 
 function Login() {
   return (
     <div>

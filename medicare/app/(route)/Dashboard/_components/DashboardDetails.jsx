@@ -2,7 +2,7 @@
 import moment from "moment";
 import React, { useState } from "react";
 import PatientList from "./PatientList";
-import VerticalCalendar from "./VerticalCalendar";
+import VerticalCalendar from "../../Appointment/_components/VerticalCalendar";
 
 function DashboardDetails() {
   const [selectedDate, setSelectedDate] = useState(moment().format('YYYY-MM-DD'));
