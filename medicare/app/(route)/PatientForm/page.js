@@ -1,5 +1,6 @@
 "use client"
 
+import withAuth from '@/app/Services/withAuth'
 import React from 'react'
 import PatientDataForm from './_components/PatientDataForm'
 
@@ -12,4 +13,4 @@ const PatientForm = () => {
   )
 }
  
-export default PatientForm;
+export default withAuth(PatientForm, ['ROLE_PATIENT']);

@@ -1,8 +1,9 @@
 "use client"
 
+import withAuth from '@/app/Services/withAuth';
 import React from 'react'
 import DoctorDataForm from './_components/DoctorDataForm'
-// import withAuth from '../hoc/withAuth';
+
 function DoctorForm() {
   return (
     <div>
@@ -12,4 +13,4 @@ function DoctorForm() {
 }
 
 
-export default DoctorForm;
+export default withAuth(DoctorForm, ['ROLE_DOCTOR']);

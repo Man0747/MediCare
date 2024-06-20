@@ -1,11 +1,20 @@
 "use client"
-import { ChevronDown, ChevronLeft, LayoutDashboard } from 'lucide-react'
-import Image from 'next/image'
-import React, { useState } from 'react'
+import { ChevronDown, ChevronLeft, LayoutDashboard, LogOut } from 'lucide-react';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { removeToken } from '../Services/AuthContext';
+
 
 function SideBar() {
-    const [open, setOpen] = useState(false)
-    const [submenuOpen, setSubmenuOpen] = useState(false)
+    const [open, setOpen] = useState(false);
+    const [submenuOpen, setSubmenuOpen] = useState(false);
+    const router = useRouter();
+
+    const handleLogout = () => {
+        removeToken();
+        router.push('/Login');
+    };
 
     const Menu = [
         { title: "Dashboard" },
@@ -22,7 +31,8 @@ function SideBar() {
         },
         { title: "Reports", spacing: true },
         { title: "Settings" },
-    ]
+        { title: "Logout", action: handleLogout, icon: LogOut }, // Add the logout menu item
+    ];
 
     return (
         <div className={`transition-all duration-300 h-screen bg-[#F1F2F4] relative ${open ? "w-64" : "w-[76px]"}`}>
@@ -36,9 +46,14 @@ function SideBar() {
             <ul className={`pt-2 pl-4 pr-2 ${!open && "pr-5"} `}>
                 {Menu.map((menu, index) => (
                     <div key={index}>
-                        <li className={`text-primary text-sm flex items-center gap-x-3 cursor-pointer p-2 hover:bg-[#E3E7FC] hover:text-[#415BE7] rounded-md ${menu.spacing ? "mt-9" : "mt-2"} relative group`}>
-                            <span className='text-2xl block float-left'><LayoutDashboard /></span>
-                            <span className={`text-base font-medium flex-1 ${!open && "hidden group-hover:block absolute text-primary left-20 bg-white shadow-lg p-2 rounded-md z-10"}`}>{menu.title}</span>
+                        <li
+                            className={`text-primary text-sm flex items-center gap-x-3 cursor-pointer p-2 hover:bg-[#E3E7FC] hover:text-[#415BE7] rounded-md ${menu.spacing ? "mt-9" : "mt-2"} relative group`}
+                            onClick={menu.action}
+                        >
+                            <span className='text-2xl block float-left'>{menu.icon ? <menu.icon /> : <LayoutDashboard />}</span>
+                            <span className={`text-base font-medium flex-1 ${!open && "hidden group-hover:block absolute text-primary left-20 bg-white shadow-lg p-2 rounded-md z-10"}`}>
+                                {menu.title}
+                            </span>
                             {menu.submenu && (
                                 <ChevronDown className={`${!open && "scale-0"} ${submenuOpen && "rotate-180"}`} onClick={() => setSubmenuOpen(!submenuOpen)} />
                             )}
@@ -59,4 +74,4 @@ function SideBar() {
     )
 }
 
-export default SideBar
+export default SideBar;
